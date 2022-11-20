@@ -1,0 +1,15 @@
+first action------push code-----pipeline------runners
+build ------Dockerfile-----docker
+login ----- creds------docker
+push ------- image-------docker
+last action ------ the image should appear in DH------docker hub account
+
+company will never use the image from docker hub directly
+they get the image from docker hub and harden the image by security and tag it according to the company policies
+For example in case of the company Devops easylearning
+they will have insteadof :
+FROM node 17
+they will have:
+FROM devopseasylearning2021/s3-mysql:001
+LABEL "Company"= "Devops-easy-learning"
+you cannot pull an image in dockerhub over 100 times in 6 hours
